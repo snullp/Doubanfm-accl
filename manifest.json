@@ -1,0 +1,18 @@
+{
+  "name": "DoubanFM accelerator",
+  "version": "0.0.1",
+  "description": "Speed up your DoubanFM in North America",
+//  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "redirect.js"
+    ]
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "http://mr3.douban.com/*",
+    "http://mr4.douban.com/*"
+  ],
+  "manifest_version": 2
+}
