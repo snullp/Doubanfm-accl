@@ -1,13 +1,11 @@
 function http_redirector(details) {
     console.log("original url: "+details.url);
-    if (details.url.slice(0,22) === "http://mr3.douban.com/"){
-        redirect_url = "http://mr3.bigsquirrel.me/"+details.url.slice(22);
+    if (details.url.indexOf("/rda/")!==-1){
+        return {cancel: true};
     }
-    if (details.url.slice(0,22) === "http://mr4.douban.com/"){
-        redirect_url = "http://mr4.bigsquirrel.me/"+details.url.slice(22);
-    }
+    var redirect_url = details.url.replace(".douban.com",".bigsquirrel.me");
     console.log("redirect url: "+redirect_url);
-    if (redirect_url !== null){
+    if (redirect_url !== details.url.replace){
         return {redirectUrl: redirect_url};
     }
     return {};
@@ -18,7 +16,12 @@ function setup_redirect() {
         chrome.webRequest.onBeforeRequest.addListener(
                 http_redirector,
                 {
-                    urls: ["http://mr3.douban.com/*.mp3","http://mr4.douban.com/*.mp3"]
+                    urls: [
+                        "http://mr3.douban.com/*/song/*",
+                        "http://mr4.douban.com/*/song/*",
+                        "http://mr3.douban.com/*/rda/*",
+                        "http://mr4.douban.com/*/rda/*"
+                        ]
                 },
                 ["blocking"]
                 );
