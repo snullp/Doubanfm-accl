@@ -2,7 +2,12 @@
   "name": "DoubanFM accelerator",
   "version": "0.0.1",
   "description": "Speed up your DoubanFM in North America",
-//  "default_locale": "en",
+  "author": "sNullp",
+  "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+  },
   "background": {
     "scripts": [
       "redirect.js"
