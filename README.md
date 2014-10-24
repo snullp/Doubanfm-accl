@@ -1,6 +1,8 @@
 Doubanfm-accl
 =============
 
-Better connectivity for North America users for DoubanFM.
+Better DoubanFM connectivity for North America users.
 
-However, this only works for Chrome v38 or later versions.
+For now you need to download the crx file and drag it to Chrome > Settings > Extensions page. And it seems that Chrome on Windows won't allow you to do this.
+
+When I had sufficient testing feedback I will put it on the Chrome store.
